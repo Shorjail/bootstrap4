@@ -45,3 +45,9 @@ body{
 
     background-color: #512da8;
 }
+
+footer .btn-social {
+
+    padding-left: 20px;
+    height: 30px;
+}
