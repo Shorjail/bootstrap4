@@ -15,7 +15,11 @@
 </head>
 
 <body>
-
+<style>
+    .modal-dialog{
+    max-width:700px !important;
+}
+</style>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <button type="button" data-toggle="collapse" data-target="#Navbar" class="navbar-toggler">
@@ -61,7 +65,7 @@
                     <img src="/img/logo.png" class="img-fluid"/>
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <button type="button" class="btn btn-warning btn-block" onclick="document.getElementById('Res').scrollIntoView();" >
+                    <button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#Res">
                        <strong>Reserve Table</strong> 
                     </button>
                 </div>
@@ -125,16 +129,22 @@
             </div>
         </div>
 
-        <div class="row row-content align-items-center" id="Res">
+        
+    </div>
 
-            <div class="col-12 col-sm-8 mx-auto">
+    <div class="modal fade" tabindex="-1" role="dialog" id="Res">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Reserve a Table</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row  align-items-center">
 
-                <div class="card">
-                    <div class="card-header yellow-bg text-white">
-                        <h2 >Reserve a Table</h2>
-                    </div>
-
-                    <div class="card-body">
+                    <div class="col-12 mx-auto">
                         <form >
                             <div class="form-group row">
                                 <div class="col-4 col-sm-3">
@@ -173,6 +183,22 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-4 col-sm-3">
+                                    <strong>Section</strong> 
+                                </div>
+                                <div class="col-8 col-sm-9">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success" active">
+                                          <input type="radio" name="options" id="option1" autocomplete="off" checked> Non-Smoking
+                                        </label>
+                                        <label class="btn btn-danger">
+                                          <input type="radio" name="options" id="option2" autocomplete="off"> Smoking
+                                        </label>
+                                                                              </div>
+                                      
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-4 col-sm-3">
                                     <strong>Date and time</strong>
                                 </div>
                                 <div class="col-8 col-sm-9">
@@ -190,20 +216,21 @@
 
                             <div class="form-group row">
                                 <div class="offset-0 offset-sm-3 col-12 col-sm-9">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-primary">Reserve</button>
                                 </div>
                             </div>
 
                         </form>
-
+                        
                     </div>
+        
                 </div>
             </div>
-
+            
+          </div>
         </div>
-    </div>
-
-
+      </div>
     <footer class="footer">
         <div class="container">
             <div class="row">             
